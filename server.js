@@ -1,4 +1,5 @@
 const http = require("http");
+const net = require("net");
 const httpProxy = require("http-proxy");
 
 const PORT = process.env.PORT || 3000;
@@ -23,6 +24,14 @@ function requireAuth(req, res) {
 }
 
 const server = http.createServer((req, res) => {
+  if (req.url === "/ping") {
+    res.writeHead(200, {
+      "Content-Type": "text/plain; charset=utf-8"
+    });
+    res.end("pong");
+    return;
+  }
+
   if (!requireAuth(req, res)) {
     return;
   }
@@ -43,6 +52,28 @@ const server = http.createServer((req, res) => {
   req.url = `${targetUrl.pathname}${targetUrl.search}`;
 
   proxy.web(req, res, { target });
+});
+
+server.on("connect", (req, clientSocket, head) => {
+  if (req.headers.authorization !== AUTH_TOKEN) {
+    clientSocket.write(
+      'HTTP/1.1 407 Proxy Authentication Required\r\nProxy-Authenticate: Basic realm="Render Proxy"\r\n\r\n'
+    );
+    clientSocket.destroy();
+    return;
+  }
+
+  const [host, port = 443] = req.url.split(":");
+  const serverSocket = net.connect(port, host, () => {
+    clientSocket.write("HTTP/1.1 200 Connection Established\r\n\r\n");
+    serverSocket.write(head);
+    serverSocket.pipe(clientSocket);
+    clientSocket.pipe(serverSocket);
+  });
+
+  serverSocket.on("error", () => {
+    clientSocket.end("HTTP/1.1 502 Bad Gateway\r\n\r\n");
+  });
 });
 
 proxy.on("error", (error, req, res) => {
