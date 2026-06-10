@@ -1,0 +1,5 @@
+# Wallet to copy:
+# https://polymarket.com/@0x6e1d5040d0ac73709b0621f620d2a60b80d2d0f
+# https://polymarket.com/profile/%400x6e1d5040d0ac73709b0621f620d2a60b80d2d0f
+# Actual proxy wallet from public profile:
+0x6e1d5040d0ac73709b0621f620d2a60b80d2d0fa

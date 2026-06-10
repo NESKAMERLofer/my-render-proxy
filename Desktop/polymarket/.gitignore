@@ -1,0 +1,27 @@
+.env
+.env.*
+!.env.example
+*.bak
+backups/
+*.tar.gz
+*.tgz
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Runtime state
+.copy_trader.lock
+.copy_trader.pid
+copy_trader.health.json
+copy_trader.log
+copy_trader.supervisor.log
+copy_trader.supervisor.nohup.out
+take_profit_state.json
+seen_trade_ids.json
+polymarket.db
+polymarket_session.session
+
+# OS noise
+.DS_Store
+Thumbs.db

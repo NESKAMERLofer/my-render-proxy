@@ -1,0 +1,7 @@
+# Wallet 1: shares/fixed mode
+# https://polymarket.com/@sweetchariot?tab=activity&r=jenna#HCUDFlb
+0x562bc8068347268d9a69b8dd464d00eed0f9dc09 | mode=fixed | fixed_size=90 | source_min=90 | source_max=110
+
+# Wallet 2: balance-percent mode
+# https://polymarket.com/@ecash?tab=positions
+0x62cf46cd4c3af254dccfc37a7f93de265b4b5826 | mode=balance_percent | balance_risk_pct=0.001 | source_min=90 | source_max=110

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.grigorijtoropov.polymarket.copytrader</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/grigorijtoropov/Desktop/polymarket/venv/bin/python</string>
+    <string>-u</string>
+    <string>/Users/grigorijtoropov/Desktop/polymarket/copy_trader.py</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/grigorijtoropov/Desktop/polymarket</string>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>ThrottleInterval</key>
+  <integer>5</integer>
+
+  <key>StandardOutPath</key>
+  <string>/Users/grigorijtoropov/Desktop/polymarket/copy_trader.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/grigorijtoropov/Desktop/polymarket/copy_trader.log</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>WATCH_ONLY_WALLET</key>
+    <string>0x04283f2fef49d70d8c55ab240450d17a65bf85b1</string>
+    <key>SHORT_TERM_WALLET</key>
+    <string>0x04283f2fef49d70d8c55ab240450d17a65bf85b1</string>
+    <key>COPY_ALL_SHORT_TERM_FOR_WALLET</key>
+    <string>0</string>
+    <key>ALLOWED_MARKET_KEYWORDS</key>
+    <string>bitcoin,ethereum</string>
+    <key>COPY_NOTIONAL_USD</key>
+    <string>1.00</string>
+    <key>MIN_ORDER_NOTIONAL</key>
+    <string>1.00</string>
+    <key>MIN_ORDER_SIZE</key>
+    <string>5.50</string>
+    <key>SHORT_TERM_MIN_PRICE</key>
+    <string>0.10</string>
+    <key>SHORT_TERM_MAX_PRICE</key>
+    <string>0.30</string>
+    <key>COPY_ORDER_TYPE</key>
+    <string>GTC</string>
+    <key>ORDER_COOLDOWN_SEC</key>
+    <string>30</string>
+    <key>BALANCE_BUFFER_USD</key>
+    <string>0.25</string>
+    <key>RESERVE_CASH_USD</key>
+    <string>5.00</string>
+    <key>AUTO_SELL_AFTER_BUY_ENABLE</key>
+    <string>1</string>
+    <key>AUTO_SELL_AFTER_BUY_PRICE</key>
+    <string>0.50</string>
+    <key>AUTO_SELL_AFTER_BUY_DELAY_SEC</key>
+    <string>3</string>
+    <key>PROFIT_TAKE_USD</key>
+    <string>30</string>
+    <key>LOW_ENTRY_TAKE_PROFIT_ENABLE</key>
+    <string>1</string>
+    <key>LOW_ENTRY_TAKE_PROFIT_USD</key>
+    <string>20</string>
+    <key>LOW_ENTRY_MIN_AVG</key>
+    <string>0.10</string>
+    <key>LOW_ENTRY_MAX_AVG</key>
+    <string>0.30</string>
+    <key>ORDER_FILL_WAIT_SEC</key>
+    <string>90</string>
+    <key>POLL_INTERVAL_SEC</key>
+    <string>10</string>
+    <key>RECENT_TRADES_LIMIT</key>
+    <string>20</string>
+    <key>BACKFILL_RECENT_TRADES</key>
+    <string>10</string>
+    <key>FETCH_TIMEOUT_SEC</key>
+    <string>5</string>
+    <key>FETCH_RETRIES</key>
+    <string>1</string>
+    <key>HEARTBEAT_SEC</key>
+    <string>60</string>
+  </dict>
+</dict>
+</plist>
